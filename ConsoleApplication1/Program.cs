@@ -19,6 +19,26 @@ namespace ConsoleApplication1
     }
     class Program
     {
+        static song[] method(song[] x)
+        {
+
+            Console.WriteLine("do you want to add or delete?(add,delete)");
+            string str = Console.ReadLine();
+            if (str ==" delete")
+            {
+                Console.WriteLine("choose index of song you want to delete: ");
+                int c = int.Parse(Console.ReadLine());
+                for (int i = 0; i < x.Length; i++)
+                {
+                    
+                }
+            }
+            else if( str == "add")
+            {
+
+            }
+            return x;
+        } 
         static void Main()
         {
             string t = "Theos";
@@ -85,8 +105,8 @@ namespace ConsoleApplication1
             Console.WriteLine("do you want to add or delete songs?(yes,no)");
             if (Console.ReadLine() == "yes")
             {
-
-            }
+                method(songlist);   
+            }           
         }
     }
 }
