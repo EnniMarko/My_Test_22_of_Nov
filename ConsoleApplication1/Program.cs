@@ -19,7 +19,7 @@ namespace ConsoleApplication1
     }
     class Program
     {
-        static song[] method(song[] x)
+        static song[] MethodEdit(song[] x)
         {
 
             Console.WriteLine("do you want to add or delete?(add,delete)");
@@ -27,15 +27,27 @@ namespace ConsoleApplication1
             if (str ==" delete")
             {
                 Console.WriteLine("choose index of song you want to delete: ");
-                int c = int.Parse(Console.ReadLine());
+                int songind = int.Parse(Console.ReadLine());
+                int newLength = x.Length - 1;
+                song[] songlist = new song[newLength];
                 for (int i = 0; i < x.Length; i++)
                 {
+                    if (songind == i )
+                    {
+                        for (int j = i; j < newLength; j++)
+                        {
+                            songlist[j] = x[j+1];
+                        }
+                    }
                     
                 }
+                return songlist;
             }
             else if( str == "add")
             {
-
+                Console.WriteLine("choose index of song you want to add: ");
+                int c = int.Parse(Console.ReadLine());
+                int newLength = x.Length + 1;
             }
             return x;
         } 
@@ -63,7 +75,8 @@ namespace ConsoleApplication1
             songlist[2].Name = "unknown";
             songlist[3].Name = "i am drunk";
             songlist[4].Name = "heaven";
-            int door; 
+            int door;
+            Console.WriteLine("");
             if(int.TryParse(Console.ReadLine(), out  door))
             {
                 Console.WriteLine("you choosed {0} song {1}", door, songlist[door].Name);
@@ -102,11 +115,17 @@ namespace ConsoleApplication1
                 }
             Console.ReadLine();
             //4
+            Flag:
             Console.WriteLine("do you want to add or delete songs?(yes,no)");
             if (Console.ReadLine() == "yes")
             {
-                method(songlist);   
-            }           
+                MethodEdit(songlist);
+            }
+            else
+            {
+                Console.WriteLine("Goodbue!");
+                Console.Read();
+            }      
         }
     }
 }
