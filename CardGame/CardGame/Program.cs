@@ -181,10 +181,10 @@ if both of you have more than 21 points game is over and win player with fewer p
             int timesMeWon = 0;
             Flag:
             Console.WriteLine("Do you want to see rules?(Yes/No)");
-            if (ToContinue())
-            {
-                Help();
-            }
+           // if (ToContinue())
+            //{
+            //    Help();
+            //}
             bool CompInGame = true;
             bool PlayerInGame = true;
             Card[] Pack = GeneratePack();
@@ -235,7 +235,7 @@ if both of you have more than 21 points game is over and win player with fewer p
                              CompHand = AddCardTo(CompHand, ref Pack);
                         }
                     }
-                    if ( PlayerInGame && (!(WhoFirstTurn()) ) )
+                    if ( PlayerInGame && (!(whoFirstTurn) ) )
                     {
                         Console.WriteLine("computer has" + CompHand.Length + "cards \n here is you cards: ");
                         PrintCards(MyHand);
@@ -269,6 +269,8 @@ if both of you have more than 21 points game is over and win player with fewer p
                 else
                 {
                     Console.WriteLine("Computer wins With score you:{0}, computer:{1}",PointsCount(MyHand),PointsCount(CompHand) );
+                    Console.WriteLine("Computer cards:");
+                    PrintCards(CompHand);
                 }
             }
             Console.WriteLine("Do you want to continue?(yes/no)");
