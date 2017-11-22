@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6E73E26C-F2FB-4406-BABE-51E5D1991583}</ProjectGuid>
+    <ProjectGuid>{E67F57BD-D9F0-4FC5-9C88-735A37DE364F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>test</RootNamespace>
-    <AssemblyName>test</AssemblyName>
+    <RootNamespace>Homework_22_Nov</RootNamespace>
+    <AssemblyName>Homework_22_Nov</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,10 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Images%28bmp%29.cs" />
-    <Compile Include="Movies.cs" />
-    <Compile Include="Text.cs" />
-    <Compile Include="File.cs" />
+    <Compile Include="IList.cs" />
+    <Compile Include="List.cs" />
+    <Compile Include="ListNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

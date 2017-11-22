@@ -180,7 +180,7 @@ if both of you have more than 21 points game is over and win player with fewer p
             int timesCompWon=0;
             int timesMeWon = 0;
             Flag:
-            Console.WriteLine("Do you want to see rules?(Yes/No)");
+           // Console.WriteLine("Do you want to see rules?(Yes/No)");
            // if (ToContinue())
             //{
             //    Help();
@@ -311,30 +311,25 @@ if both of you have more than 21 points game is over and win player with fewer p
             }  
             return res;
         }
-        static bool ToContinue()//true - yes
+        public static bool ExitConfirmed()
         {
-            bool res;
             while (true)
             {
-                string str = Console.ReadLine();
-                if ((str == "yes") || (str == "Yes") || (str == "YES"))
+                Console.WriteLine("Do you want to start new game? Yes / No");
+                string decision = Console.ReadLine();
+                switch (decision)
                 {
-                    res = true;
+                    case "Yes":
+                        return false;
+                    case "No":
+                        return true;
+                    default:
+                        Console.WriteLine("Please enter a correct value!");
+                        break;
                 }
-                else if ((str == "no") || (str == "No") || (str == "NO"))
-                {
-                    res = false;
-                }
-                else
-                {
-                    Console.WriteLine("I didn't understand you, try once again, please:");
-                    Console.Read();
-                    continue;
-                }
-                break;
             }
-            return res;
         }
+    }
 }
         
-}
+
