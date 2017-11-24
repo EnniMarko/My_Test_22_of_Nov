@@ -6,17 +6,25 @@ using System.Threading.Tasks;
 
 namespace test
 {
-    class Text : File
+    class Movie : File
     {
-        static private int _index = 0;
-        public string Content;
-        public Text(string str)
+        static private int _index;
+        public string Resolution;
+        string Length;
+        public Movie(string str)
         {
+            //Name = _name;
+            //Extension = _extension;
+            //Size = _size;
+            //Resolution = _resolution;
+            //Length = _length;
+            //Index = _index;
+            //_index++;
             int k = 0;
             int j = 0;
-            j = str.IndexOf(".", 5);
-            int z = j - 5;
-            Name = str.Substring(5, z);
+            j = str.IndexOf(".mkv", 6);
+            int z = j - 6;
+            Name = str.Substring(6, z);
             k = j + 1;
             j = str.IndexOf('(', k);
             z = j - k;
@@ -26,33 +34,40 @@ namespace test
             z = j - k;
             Size = str.Substring(k, z);
             k = j + 2;
-            j = str.Length - 1;
+            j = str.IndexOf(';', k);
             z = j - k;
-            Content = str.Substring(k, z);
+            Resolution = str.Substring(k, z);
+            k = j + 1;
+            j = str.IndexOf('\r',k);
+            z = j - k;
+            Length = str.Substring(k);
             _realsize = GetRealSize(Size);
             Index = _index++;
         }
-        public static void Print(Text[] arr)
+
+
+        public static void Print(Movie[] arr)
         {
             Console.WriteLine("Movies:");
             int i = 0;
-            while(arr[i]!= null)
+            while (arr[i] !=null)
             {
                 Console.WriteLine("\t" + arr[i].Name + "." + arr[i].Extension);
                 Console.WriteLine("\t\tExtension:" + arr[i].Extension);
                 Console.WriteLine("\t\tSize:" + arr[i].Size);
-                Console.WriteLine("\t\tContent:" + arr[i].Content);
+                Console.WriteLine("\t\tResolution:" + arr[i].Resolution);
+                Console.WriteLine("\t\tLength"+arr[i]);
                 i++;
             }
         }
-        public static void BubbleSort(Text[] array)
+        public static void BubbleSort(Movie[] array)
         {
             int count = 0;
             while (array[count] != null)
             {
                 count++;
             }
-            Text[] buf = new Text[count];
+            Movie[] buf = new Movie[count];
             for (int j = 0; j < count; j++)
             {
                 buf[j] = array[count];

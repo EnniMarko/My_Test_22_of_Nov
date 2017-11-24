@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Images%28bmp%29.cs" />
-    <Compile Include="Movies.cs" />
+    <Compile Include="Image..cs" />
+    <Compile Include="Movie.cs" />
     <Compile Include="Text.cs" />
     <Compile Include="File.cs" />
     <Compile Include="Program.cs" />
